@@ -8,64 +8,64 @@ Berikut adalah command Git yang disesuaikan dengan alur diagram diatas:
 
   * Pindah ke Branch Utama:
    
-   ```
-   git checkout main
-   ```
+    ```
+    git checkout main
+    ```
 
 ### **Branch Fitur (`feature/xyz`)**
 
   * Buat branch fitur baru (berdasarkan `develop`):
 
-   ```
-   git checkout develop
-   git checkout -b feature/xyz
-   ```
+    ```
+    git checkout develop
+    git checkout -b feature/xyz
+    ```
 
   * Commit perubahan di branch fitur:
 
-   ```
-   git add .
-   git commit -m "Tambah fitur baru xyz"
-   ```
+    ```
+    git add .
+    git commit -m "Tambah fitur baru xyz"
+    ```
    
   * Gabungkan branch fitur ke `develop` setelah fitur selesai:
 
-   ```
-   git checkout develop
-   git merge feature/xyz
-   git branch -d feature/xyz
-   ```
+    ```
+    git checkout develop
+    git merge feature/xyz
+    git branch -d feature/xyz
+    ```
 
 ### **Branch Develop (`develop`)**
 
   * Gabungkan develop ke branch release ketika fitur siap diuji:
 
-   ```
-   git checkout release
-   git merge develop
-   ```
+    ```
+    git checkout release
+    git merge develop
+    ```
 
 ### **Branch Rilis (`release`)**
 
   * Buat branch release (berdasarkan `develop`):
 
-   ```
-   git checkout develop
-   git checkout -b release/v1.0
-   ```
+    ```
+    git checkout develop
+    git checkout -b release/v1.0
+    ```
 
   * Gabungkan branch release ke `main` setelah testing selesai:
 
-   ```
-   git checkout main
-   git merge release/v1.0
-   ```
+    ```
+    git checkout main
+    git merge release/v1.0
+    ```
   * Tag versi rilis:
 
-   ```
-   git tag v1.0
-   git push --tags
-   ```
+    ```
+    git tag v1.0
+    git push --tags
+    ```
 
 ### **Branch Hotfix (`hotfix`)**
 
